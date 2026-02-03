@@ -1,0 +1,326 @@
+[gd_scene format=4 uid="uid://bhyktxwbpkx6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2l3r"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3ceak"]
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAwACAAEAAwABAAUACQACAAMACQAIAAIACgADAAUACgAJAAMACwAFAAEACwAKAAUACAALAAEACwAEAAoACQAGAAgACAAAAAsACwAAAAQACAAGAAAACgAEAAcACgAHAAkABwAEAAAACQAHAAYABwAAAAYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIAAQAAAAQAAwABAAUAAQAEAAUAAwAGAAAABwAEAAAABQAEAAcABwAAAAYABQAHAAMAAwAHAAYA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIA/AACAvwAAgD8AAIC/AACAP+Iss8AAAIC/AACAv+Iss8AAAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gtakv"]
+resource_name = "biped_Cube_003"
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAACA/AAAAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AABgPwAAgD4AAGA/AAAAPwAAID8AAIA+AAAAPgAAAD8AAMA+AACAPgAAwD4AAAA/AAAAPgAAgD4AACA/AAAAPwAAwD4AAEA/AADAPgAAAD8AACA/AABAPwAAID8AAEA/AADAPgAAgD8AAMA+AABAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAAA/AADAPgAAgD4AAMA+AABAPwAAwD4AAAA/AADAPgAAgD8AAMA+AABAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAAAABkAGQAAAAMAGgAGAAQAGgAbAAYAGgAHABsAGwAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AHAAQABMAHAAdABAAHAARAB0AHQARABIAHgAUABcAHgAfABQAHgAVAB8AHwAVABYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAAFAAVABYAFwAVABQA")],
+"material": SubResource("StandardMaterial3D_v2l3r"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAP+Iss8AAAIA/AACAPwAAgD8AAIA/AACAP+Iss8AAAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIC/AACAPwAAgD8AAIA/AACAv+Iss8AAAIC/AACAP+Iss8AAAIA/AACAP+Iss8AAAIC/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIC/AACAP+Iss8AAAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAv+Iss8AAAIA/AACAv+Iss8AAAIC/AACAvwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC//3//f////z//f/9//3////9//3//f////3//f////z////9//3///////3////+/////f/9///////9/////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7///////3////////////+//////////7///////3///wAA/3//f///AAD/f////78AAP9/////vwAA/3//f////3//f/9/////f/9//3///////3//f///////f/9//////////3//////////f///AAD/f/9///8AAP9//3///w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3ceak")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxbmc"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xgmvb"]
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAwACAAEAAwABAAUACQACAAMACQAIAAIACgADAAUACgAJAAMACwAFAAEACwAKAAUACAALAAEACwAEAAoACQAGAAgACAAAAAsACwAAAAQACAAGAAAACgAEAAcACgAHAAkABwAEAAAACQAHAAYABwAAAAYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIAAQAAAAQAAwABAAUAAQAEAAUAAwAGAAAABwAEAAAABQAEAAcABwAAAAYABQAHAAMAAwAHAAYA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIA/AACAvwAAgD8AAIC/AACAP+Iss8AAAIC/AACAv+Iss8AAAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ls0hl"]
+resource_name = "biped_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAACA/AAAAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AABgPwAAgD4AAGA/AAAAPwAAID8AAIA+AAAAPgAAAD8AAMA+AACAPgAAwD4AAAA/AAAAPgAAgD4AACA/AAAAPwAAwD4AAEA/AADAPgAAAD8AACA/AABAPwAAID8AAEA/AADAPgAAgD8AAMA+AABAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAAA/AADAPgAAgD4AAMA+AABAPwAAwD4AAAA/AADAPgAAgD8AAMA+AABAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAAAABkAGQAAAAMAGgAGAAQAGgAbAAYAGgAHABsAGwAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AHAAQABMAHAAdABAAHAARAB0AHQARABIAHgAUABcAHgAfABQAHgAVAB8AHwAVABYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAAFAAVABYAFwAVABQA")],
+"material": SubResource("StandardMaterial3D_oxbmc"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAP+Iss8AAAIA/AACAPwAAgD8AAIA/AACAP+Iss8AAAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIC/AACAPwAAgD8AAIA/AACAv+Iss8AAAIC/AACAP+Iss8AAAIA/AACAP+Iss8AAAIC/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIC/AACAP+Iss8AAAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAv+Iss8AAAIA/AACAv+Iss8AAAIC/AACAvwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC//3//f////z//f/9//3////9//3//f////3//f////z////9//3///////3////+/////f/9///////9/////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7///////3////////////+//////////7///////3///wAA/3//f///AAD/f////78AAP9/////vwAA/3//f////3//f/9/////f/9//3///////3//f///////f/9//////////3//////////f///AAD/f/9///8AAP9//3///w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xgmvb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh3hg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_um6gl"]
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAwACAAEAAwABAAUACQACAAMACQAIAAIACgADAAUACgAJAAMACwAFAAEACwAKAAUACAALAAEACwAEAAoACQAGAAgACAAAAAsACwAAAAQACAAGAAAACgAEAAcACgAHAAkABwAEAAAACQAHAAYABwAAAAYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIAAQAAAAQAAwABAAUAAQAEAAUAAwAGAAAABwAEAAAABQAEAAcABwAAAAYABQAHAAMAAwAHAAYA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIA/AACAvwAAgD8AAIC/AACAP+Iss8AAAIC/AACAv+Iss8AAAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cjbke"]
+resource_name = "biped_Cube_005"
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAACA/AAAAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AABgPwAAgD4AAGA/AAAAPwAAID8AAIA+AAAAPgAAAD8AAMA+AACAPgAAwD4AAAA/AAAAPgAAgD4AACA/AAAAPwAAwD4AAEA/AADAPgAAAD8AACA/AABAPwAAID8AAEA/AADAPgAAgD8AAMA+AABAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAAA/AADAPgAAgD4AAMA+AABAPwAAwD4AAAA/AADAPgAAgD8AAMA+AABAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAAAABkAGQAAAAMAGgAGAAQAGgAbAAYAGgAHABsAGwAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AHAAQABMAHAAdABAAHAARAB0AHQARABIAHgAUABcAHgAfABQAHgAVAB8AHwAVABYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAAFAAVABYAFwAVABQA")],
+"material": SubResource("StandardMaterial3D_jh3hg"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAP+Iss8AAAIA/AACAPwAAgD8AAIA/AACAP+Iss8AAAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIC/AACAPwAAgD8AAIA/AACAv+Iss8AAAIC/AACAP+Iss8AAAIA/AACAP+Iss8AAAIC/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIC/AACAP+Iss8AAAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAv+Iss8AAAIA/AACAv+Iss8AAAIC/AACAvwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC//3//f////z//f/9//3////9//3//f////3//f////z////9//3///////3////+/////f/9///////9/////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7///////3////////////+//////////7///////3///wAA/3//f///AAD/f////78AAP9/////vwAA/3//f////3//f/9/////f/9//3///////3//f///////f/9//////////3//////////f///AAD/f/9///8AAP9//3///w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_um6gl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnbl8"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nb1o7"]
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAwACAAEAAwABAAUACQACAAMACQAIAAIACgADAAUACgAJAAMACwAFAAEACwAKAAUACAALAAEACwAEAAoACQAGAAgACAAAAAsACwAAAAQACAAGAAAACgAEAAcACgAHAAkABwAEAAAACQAHAAYABwAAAAYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIAAQAAAAQAAwABAAUAAQAEAAUAAwAGAAAABwAEAAAABQAEAAcABwAAAAYABQAHAAMAAwAHAAYA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIA/AACAvwAAgD8AAIC/AACAP+Iss8AAAIC/AACAv+Iss8AAAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hpokx"]
+resource_name = "biped_Cube_004"
+_surfaces = [{
+"aabb": AABB(-1, -5.599229, -1, 2, 6.599229, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAACA/AAAAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AABgPwAAgD4AAGA/AAAAPwAAID8AAIA+AAAAPgAAAD8AAMA+AACAPgAAwD4AAAA/AAAAPgAAgD4AACA/AAAAPwAAwD4AAEA/AADAPgAAAD8AACA/AABAPwAAID8AAEA/AADAPgAAgD8AAMA+AABAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAAA/AADAPgAAgD4AAMA+AABAPwAAwD4AAAA/AADAPgAAgD8AAMA+AABAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAAAABkAGQAAAAMAGgAGAAQAGgAbAAYAGgAHABsAGwAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AHAAQABMAHAAdABAAHAARAB0AHQARABIAHgAUABcAHgAfABQAHgAVAB8AHwAVABYA"),
+"lods": [0.0007694873, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAAFAAVABYAFwAVABQA")],
+"material": SubResource("StandardMaterial3D_vnbl8"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACAP+Iss8AAAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAP+Iss8AAAIA/AACAPwAAgD8AAIA/AACAP+Iss8AAAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIC/AACAPwAAgD8AAIA/AACAv+Iss8AAAIC/AACAP+Iss8AAAIA/AACAP+Iss8AAAIC/AACAv+Iss8AAAIA/AACAPwAAgD8AAIC/AACAv+Iss8AAAIC/AACAP+Iss8AAAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAv+Iss8AAAIA/AACAv+Iss8AAAIC/AACAvwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC//3//f////z//f/9//3////9//3//f////3//f////z////9//3///////3////+/////f/9///////9/////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7///////3////////////+//////////7///////3///wAA/3//f///AAD/f////78AAP9/////vwAA/3//f////3//f/9/////f/9//3///////3//f///////f/9//////////3//////////f///AAD/f/9///8AAP9//3///w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nb1o7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_webhv"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ruixf"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ilga"]
+resource_name = "biped_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_webhv"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ruixf")
+
+[node name="Node3D" type="Node3D" unique_id=1569417417]
+
+[node name="biped" type="Node3D" parent="." unique_id=511392487]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+
+[node name="Armature" type="Node3D" parent="biped" unique_id=163586984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38354623, 0)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="biped/Armature" unique_id=899341897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8285761, 0.011075854)
+bones/0/name = "Body"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "upper_leg.l"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, -1.1102229e-16, -2.3841855e-07, -2.7515608e-09, -0.99993336, -0.011540883, -2.3840266e-07, 0.011540883, -0.9999334, 7.695576e-17, 0.4292664, -0.50513065)
+bones/1/enabled = true
+bones/1/position = Vector3(7.695576e-17, 0.4292664, -0.50513065)
+bones/1/rotation = Quaternion(0.9999834, -6.879017e-10, -1.1920729e-07, 0.0057705385)
+bones/1/scale = Vector3(1, 0.99999994, 1)
+bones/2/name = "lower_leg.l"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 2.75156e-09, -1.5942202e-11, -2.751561e-09, 0.99993336, -0.011540883, -1.5814296e-11, 0.011540882, 0.9999334, 1.0513052e-14, 0.90708596, 1.6763806e-08)
+bones/2/enabled = true
+bones/2/position = Vector3(1.0513052e-14, 0.90708596, 1.6763806e-08)
+bones/2/rotation = Quaternion(0.005770538, -3.1977127e-14, -1.3758034e-09, 0.9999834)
+bones/2/scale = Vector3(1, 0.99999994, 1)
+bones/3/name = "foot.l"
+bones/3/parent = 2
+bones/3/rest = Transform3D(0, 1, 2.3841858e-07, -1, 0, 2.802674e-07, 2.802674e-07, -2.3841864e-07, 1, 7.695576e-17, 0.87880963, 0)
+bones/3/enabled = true
+bones/3/position = Vector3(7.695576e-17, 0.87880963, 0)
+bones/3/rotation = Quaternion(-1.833832e-07, -1.4795767e-08, -0.70710677, 0.70710677)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/name = "upper_leg.r"
+bones/4/parent = 0
+bones/4/rest = Transform3D(1, -1.1102229e-16, -2.3841855e-07, -2.7515608e-09, -0.99993336, -0.011540883, -2.3840266e-07, 0.011540883, -0.9999334, 7.695576e-17, 0.4292664, 0.48758543)
+bones/4/enabled = true
+bones/4/position = Vector3(7.695576e-17, 0.4292664, 0.48758543)
+bones/4/rotation = Quaternion(0.9999834, -6.879017e-10, -1.1920729e-07, 0.0057705385)
+bones/4/scale = Vector3(1, 0.99999994, 1)
+bones/5/name = "lower_leg.r"
+bones/5/parent = 4
+bones/5/rest = Transform3D(1, 2.75156e-09, -1.5942202e-11, -2.751561e-09, 0.99993336, -0.011540883, -1.5814296e-11, 0.011540882, 0.9999334, 3.4076248e-15, 0.90708596, 1.6763806e-08)
+bones/5/enabled = true
+bones/5/position = Vector3(3.4076248e-15, 0.90708596, 1.6763806e-08)
+bones/5/rotation = Quaternion(0.005770538, -3.1977127e-14, -1.3758034e-09, 0.9999834)
+bones/5/scale = Vector3(1, 0.99999994, 1)
+bones/6/name = "lower_leg.r.002_L"
+bones/6/parent = 5
+bones/6/rest = Transform3D(1, 1.9852336e-23, -1.509958e-07, 1.9852333e-23, -1, -1.3648482e-23, -1.509958e-07, 1.3648479e-23, -1, 7.695576e-17, 0.87880963, 0)
+bones/6/enabled = true
+bones/6/position = Vector3(7.695576e-17, 0.87880963, 0)
+bones/6/rotation = Quaternion(1, 9.926167e-24, -7.54979e-08, 6.82424e-24)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/name = "lower_leg.r.002_R"
+bones/7/parent = 5
+bones/7/rest = Transform3D(1, 1.9852336e-23, -1.509958e-07, 1.9852333e-23, -1, -1.3648482e-23, -1.509958e-07, 1.3648479e-23, -1, 7.695576e-17, 0.87880963, 0)
+bones/7/enabled = true
+bones/7/position = Vector3(7.695576e-17, 0.87880963, 0)
+bones/7/rotation = Quaternion(1, 9.926167e-24, -7.54979e-08, 6.82424e-24)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/name = "foot.r"
+bones/8/parent = 5
+bones/8/rest = Transform3D(0, 0.99999994, 2.3841858e-07, -0.99999994, -6.682095e-14, 2.8026741e-07, 2.802674e-07, -2.3841856e-07, 1, 7.695576e-17, 0.87880963, 0)
+bones/8/enabled = true
+bones/8/position = Vector3(7.695576e-17, 0.87880963, 0)
+bones/8/rotation = Quaternion(-1.8338318e-07, -1.47957975e-08, -0.70710677, 0.70710677)
+bones/8/scale = Vector3(0.99999994, 0.99999994, 1)
+
+[node name="lower_leg_l" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=1004673707]
+transform = Transform3D(0.82149446, 0.5701286, -0.010008957, 0.5702078, -0.82145256, 0.0088910805, -0.0031528238, -0.013011158, -0.9999106, 0.517226, -0.31590515, -0.5064645)
+bone_name = "lower_leg.l"
+bone_idx = 2
+
+[node name="Cube_002" type="MeshInstance3D" parent="biped/Armature/Skeleton3D/lower_leg_l" unique_id=63227891]
+transform = Transform3D(-0.074892186, -4.1267776e-17, -1.0250913e-08, 3.4336708e-18, -0.15404584, 4.0042632e-11, 1.7855688e-08, -1.4346638e-10, -0.042995445, 1.793837e-10, 0.0875631, 0.00075238943)
+mesh = SubResource("ArrayMesh_gtakv")
+
+[node name="upper_leg_l" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=609679555]
+transform = Transform3D(0.82149446, 0.57020617, -0.0034285018, 0.5702078, -0.8215005, -0.00058980123, -0.0031528238, -0.0014704397, -0.99999416, 7.695576e-17, 0.4292664, -0.50513065)
+bone_name = "upper_leg.l"
+bone_idx = 1
+
+[node name="Cube_001" type="MeshInstance3D" parent="biped/Armature/Skeleton3D/upper_leg_l" unique_id=1362852623]
+transform = Transform3D(-0.074892186, -4.2386636e-10, -1.0250229e-08, 1.6629406e-17, -0.15403558, 0.00049620535, 1.7855685e-08, -0.0017778247, -0.042992588, 0.011763166, 0.0983703, -0.010461979)
+mesh = SubResource("ArrayMesh_ls0hl")
+
+[node name="lower_leg_r" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=1831659474]
+transform = Transform3D(0.9030296, -0.42927712, -0.016081149, -0.42879167, -0.8984798, -0.09418811, 0.025984213, 0.0919501, -0.9954244, -0.389197, -0.38469172, 0.5814072)
+bone_name = "lower_leg.r"
+bone_idx = 5
+
+[node name="Cube_004" type="MeshInstance3D" parent="biped/Armature/Skeleton3D/lower_leg_r" unique_id=23723107]
+transform = Transform3D(-0.074892186, -4.1267776e-17, -1.0250913e-08, 3.4336708e-18, -0.15404584, 4.0042632e-11, 1.7855688e-08, -1.4346638e-10, -0.042995445, 2.133497e-09, 0.0875631, 0.008948535)
+mesh = SubResource("ArrayMesh_cjbke")
+
+[node name="upper_leg_r" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=185151550]
+transform = Transform3D(0.9030296, -0.42906296, -0.021034315, -0.42879167, -0.89733297, -0.104551084, 0.025984213, 0.10343206, -0.9942969, 7.695576e-17, 0.4292664, 0.48758543)
+bone_name = "upper_leg.r"
+bone_idx = 4
+
+[node name="Cube_003" type="MeshInstance3D" parent="biped/Armature/Skeleton3D/upper_leg_r" unique_id=478883183]
+transform = Transform3D(-0.074892186, -4.2386636e-10, -1.0250229e-08, 1.6629406e-17, -0.15403558, 0.00049620535, 1.7855685e-08, -0.0017778247, -0.042992588, 0.011763168, 0.09827576, -0.0022664284)
+mesh = SubResource("ArrayMesh_hpokx")
+
+[node name="Body" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=1112841811]
+bone_name = "Body"
+bone_idx = 0
+
+[node name="Cube" type="MeshInstance3D" parent="biped/Armature/Skeleton3D/Body" unique_id=155798034]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.38354623, 0)
+mesh = SubResource("ArrayMesh_7ilga")
+
+[node name="Left_leg_ik" type="FABRIK3D" parent="biped/Armature/Skeleton3D" unique_id=1555382826]
+angular_delta_limit = 0.9807703198656936
+setting_count = 1
+settings/0/target_node = NodePath("../../../Left_target")
+settings/0/root_bone_name = "upper_leg.l"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "foot.l"
+settings/0/end_bone = 3
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 2
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+
+[node name="Right_leg_ik" type="FABRIK3D" parent="biped/Armature/Skeleton3D" unique_id=1184814115]
+setting_count = 1
+settings/0/target_node = NodePath("../../../Right_target")
+settings/0/root_bone_name = "upper_leg.r"
+settings/0/root_bone = 4
+settings/0/end_bone_name = "foot.r"
+settings/0/end_bone = 8
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 2
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+
+[node name="Left_target" type="Marker3D" parent="biped" unique_id=797595601]
+transform = Transform3D(-0.5300065, 0.13007547, -0.83795506, -0.12024093, 0.96665204, 0.22610812, 0.83942264, 0.22059542, -0.49669185, 1.5955364, -1.4244604, -0.5083118)
+
+[node name="Right_target" type="Marker3D" parent="biped" unique_id=1579464284]
+transform = Transform3D(-0.5305603, 0.27809337, -0.8007302, 0.6222951, 0.7692006, -0.14518622, 0.5755469, -0.57532024, -0.58116347, -1.1117013, -1.451306, 0.7565177)
