@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://by5y774a3ycrf"]
+
+[ext_resource type="PackedScene" uid="uid://bhyktxwbpkx6e" path="res://Biped.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://bio7v7ol87vdq" path="res://biped.gd" id="2_fj7yv"]
+
+[sub_resource type="Environment" id="Environment_fj7yv"]
+background_energy_multiplier = 0.6
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tlwt5"]
+
+[sub_resource type="Compositor" id="Compositor_aqk2v"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_036b0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dwbse"]
+size = Vector2(10, 10)
+
+[node name="world" type="Node3D" unique_id=260490492]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=597205167]
+environment = SubResource("Environment_fj7yv")
+camera_attributes = SubResource("CameraAttributesPractical_tlwt5")
+compositor = SubResource("Compositor_aqk2v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=497518629]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2140232428]
+shape = SubResource("WorldBoundaryShape3D_036b0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1662792494]
+layers = 3
+mesh = SubResource("PlaneMesh_dwbse")
+
+[node name="biped" parent="." unique_id=1569417417 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2690643, -0.3763405, 0.47119194)
+script = ExtResource("2_fj7yv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1611717442]
+transform = Transform3D(-0.94823116, -0.12987109, 0.2898125, 0.08266293, 0.7801749, 0.62007594, -0.30663437, 0.61193204, -0.7290505, 1.6828055, 2.9455957, -3.8135173)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2122758631]
+transform = Transform3D(0.80137914, 0.49377128, 0.3376114, 0, -0.56441957, 0.8254881, 0.5981568, -0.6615289, -0.45231405, 2.1354883, 3.6968954, -3.3164425)

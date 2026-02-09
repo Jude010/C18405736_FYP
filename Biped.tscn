@@ -1,5 +1,10 @@
 [gd_scene format=4 uid="uid://bhyktxwbpkx6e"]
 
+[ext_resource type="Script" uid="uid://bio7v7ol87vdq" path="res://biped.gd" id="1_il0n7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a1die"]
+size = Vector3(0.9015503, 0.89416504, 0.90148926)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2l3r"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3ceak"]
@@ -168,10 +173,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ruixf")
 
-[node name="Node3D" type="Node3D" unique_id=1569417417]
+[node name="Node3D" type="CharacterBody3D" unique_id=199816479]
+script = ExtResource("1_il0n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1764556004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009552002, 1.8271881, -0.00091552734)
+shape = SubResource("BoxShape3D_a1die")
 
 [node name="biped" type="Node3D" parent="." unique_id=511392487]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 1, 0)
 
 [node name="Armature" type="Node3D" parent="biped" unique_id=163586984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38354623, 0)
@@ -243,7 +253,7 @@ bones/8/rotation = Quaternion(-1.8338318e-07, -1.47957975e-08, -0.70710677, 0.70
 bones/8/scale = Vector3(0.99999994, 0.99999994, 1)
 
 [node name="lower_leg_l" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=1004673707]
-transform = Transform3D(0.82149446, 0.5701286, -0.010008957, 0.5702078, -0.82145256, 0.0088910805, -0.0031528238, -0.013011158, -0.9999106, 0.517226, -0.31590515, -0.5064645)
+transform = Transform3D(0.97721314, -0.21216258, -0.0064487876, -0.21219397, -0.9772166, -0.004634301, -0.0053186384, 0.0058970917, -0.9999685, 0.25213647, -0.44197774, -0.49225006)
 bone_name = "lower_leg.l"
 bone_idx = 2
 
@@ -252,7 +262,7 @@ transform = Transform3D(-0.074892186, -4.1267776e-17, -1.0250913e-08, 3.4336708e
 mesh = SubResource("ArrayMesh_gtakv")
 
 [node name="upper_leg_l" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=609679555]
-transform = Transform3D(0.82149446, 0.57020617, -0.0034285018, 0.5702078, -0.8215005, -0.00058980123, -0.0031528238, -0.0014704397, -0.99999416, 7.695576e-17, 0.4292664, -0.50513065)
+transform = Transform3D(0.96058625, 0.27796316, -0.0032410629, 0.27788135, -0.9604868, -0.015720215, -0.0074826386, 0.01419999, -0.99987125, 7.695576e-17, 0.4292664, -0.50513065)
 bone_name = "upper_leg.l"
 bone_idx = 1
 
@@ -261,7 +271,7 @@ transform = Transform3D(-0.074892186, -4.2386636e-10, -1.0250229e-08, 1.6629406e
 mesh = SubResource("ArrayMesh_ls0hl")
 
 [node name="lower_leg_r" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=1831659474]
-transform = Transform3D(0.9030296, -0.42927712, -0.016081149, -0.42879167, -0.8984798, -0.09418811, 0.025984213, 0.0919501, -0.9954244, -0.389197, -0.38469172, 0.5814072)
+transform = Transform3D(0.998961, -0.045573667, 0.00014250234, -0.04556483, -0.9988198, -0.016820554, 0.0009089084, 0.016796578, -0.9998587, -0.041337974, -0.4765126, 0.5132874)
 bone_name = "lower_leg.r"
 bone_idx = 5
 
@@ -270,7 +280,7 @@ transform = Transform3D(-0.074892186, -4.1267776e-17, -1.0250913e-08, 3.4336708e
 mesh = SubResource("ArrayMesh_cjbke")
 
 [node name="upper_leg_r" type="BoneAttachment3D" parent="biped/Armature/Skeleton3D" unique_id=185151550]
-transform = Transform3D(0.9030296, -0.42906296, -0.021034315, -0.42879167, -0.89733297, -0.104551084, 0.025984213, 0.10343206, -0.9942969, 7.695576e-17, 0.4292664, 0.48758543)
+transform = Transform3D(0.998961, -0.04557228, -0.00038346765, -0.045564834, -0.9985592, -0.028346697, 0.00090890843, 0.028334714, -0.99959826, 7.695576e-17, 0.4292664, 0.48758543)
 bone_name = "upper_leg.r"
 bone_idx = 4
 
@@ -288,24 +298,36 @@ mesh = SubResource("ArrayMesh_7ilga")
 
 [node name="Left_leg_ik" type="FABRIK3D" parent="biped/Armature/Skeleton3D" unique_id=1555382826]
 angular_delta_limit = 0.9807703198656936
-setting_count = 1
-settings/0/target_node = NodePath("../../../Left_target")
+deterministic = true
+setting_count = 2
+settings/0/target_node = NodePath("../LeftKnee")
+settings/1/target_node = NodePath("../../../SpringArmLeft/Left_target")
 settings/0/root_bone_name = "upper_leg.l"
 settings/0/root_bone = 1
-settings/0/end_bone_name = "foot.l"
-settings/0/end_bone = 3
+settings/0/end_bone_name = "lower_leg.l"
+settings/0/end_bone = 2
 settings/0/extend_end_bone = false
-settings/0/joint_count = 3
+settings/0/joint_count = 2
+settings/1/root_bone_name = "upper_leg.l"
+settings/1/root_bone = 1
+settings/1/end_bone_name = "foot.l"
+settings/1/end_bone = 3
+settings/1/extend_end_bone = false
+settings/1/joint_count = 3
 settings/0/joints/0/rotation_axis = 3
 settings/0/joints/0/limitation = null
-settings/0/joints/1/rotation_axis = 2
+settings/0/joints/1/rotation_axis = 3
 settings/0/joints/1/limitation = null
-settings/0/joints/2/rotation_axis = 3
-settings/0/joints/2/limitation = null
+settings/1/joints/0/rotation_axis = 3
+settings/1/joints/0/limitation = null
+settings/1/joints/1/rotation_axis = 2
+settings/1/joints/1/limitation = null
+settings/1/joints/2/rotation_axis = 3
+settings/1/joints/2/limitation = null
 
 [node name="Right_leg_ik" type="FABRIK3D" parent="biped/Armature/Skeleton3D" unique_id=1184814115]
 setting_count = 1
-settings/0/target_node = NodePath("../../../Right_target")
+settings/0/target_node = NodePath("../../../SpringArmRight/Right_target")
 settings/0/root_bone_name = "upper_leg.r"
 settings/0/root_bone = 4
 settings/0/end_bone_name = "foot.r"
@@ -319,8 +341,21 @@ settings/0/joints/1/limitation = null
 settings/0/joints/2/rotation_axis = 3
 settings/0/joints/2/limitation = null
 
-[node name="Left_target" type="Marker3D" parent="biped" unique_id=797595601]
-transform = Transform3D(-0.5300065, 0.13007547, -0.83795506, -0.12024093, 0.96665204, 0.22610812, 0.83942264, 0.22059542, -0.49669185, 1.5955364, -1.4244604, -0.5083118)
+[node name="LeftKnee" type="Marker3D" parent="biped/Armature/Skeleton3D" unique_id=191407294]
+transform = Transform3D(0.99999934, 0, -1.0658141e-14, 0, 1, 0, 1.0658141e-14, 0, 0.99999934, 0.9940328, 0.008966923, -0.46694732)
 
-[node name="Right_target" type="Marker3D" parent="biped" unique_id=1579464284]
-transform = Transform3D(-0.5305603, 0.27809337, -0.8007302, 0.6222951, 0.7692006, -0.14518622, 0.5755469, -0.57532024, -0.58116347, -1.1117013, -1.451306, 0.7565177)
+[node name="SpringArmLeft" type="SpringArm3D" parent="biped" unique_id=1858481935]
+transform = Transform3D(0.9999984, -3.5527137e-15, 0, 0, -4.3711324e-08, -0.9999987, 0, 0.9999985, -4.3711328e-08, -0.09761428, 0.0087047815, -0.76543635)
+collision_mask = 2
+spring_length = 4.0
+
+[node name="Left_target" type="Marker3D" parent="biped/SpringArmLeft" unique_id=797595601]
+transform = Transform3D(0.22702108, 0.6880375, 0.68924963, 0.49378744, -0.69133186, 0.5274734, 0.83942246, 0.2205955, -0.49669167, 0.15489939, 0.28814104, 0.903139)
+
+[node name="SpringArmRight" type="SpringArm3D" parent="biped" unique_id=162179639]
+transform = Transform3D(0.9999989, -1.0658141e-14, 0, 0, -4.3711374e-08, -0.9999998, 1.0658141e-14, 0.9999991, -4.3711346e-08, -0.008116393, 0.3908453, 0.78188485)
+collision_mask = 2
+spring_length = 4.0
+
+[node name="Right_target" type="Marker3D" parent="biped/SpringArmRight" unique_id=1579464284]
+transform = Transform3D(0.5755462, -0.5753195, -0.58116275, 0.04247712, -0.6886779, 0.72382087, -0.8166643, -0.44128, -0.37192807, -0.09708891, -0.22795236, 1.8219612)
