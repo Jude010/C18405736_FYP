@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c5lygvdp6btgy"]
+
+[ext_resource type="Script" uid="uid://cylu6ukgisnks" path="res://leg_ik.gd" id="1_5q2h7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il0n7"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tr064"]
+material = SubResource("StandardMaterial3D_il0n7")
+radius = 0.1
+height = 0.2
+
+[node name="Left_leg_ik" type="FABRIK3D" unique_id=1371034093]
+angular_delta_limit = 0.9807703198656936
+deterministic = true
+setting_count = 2
+settings/0/target_node = NodePath("")
+settings/1/target_node = NodePath("IK_Target")
+settings/0/root_bone_name = ""
+settings/0/root_bone = -1
+settings/0/end_bone_name = ""
+settings/0/end_bone = -1
+settings/0/joint_count = 0
+settings/1/root_bone_name = ""
+settings/1/root_bone = -1
+settings/1/end_bone_name = ""
+settings/1/end_bone = -1
+settings/1/joint_count = 0
+script = ExtResource("1_5q2h7")
+
+[node name="SpringArm" type="SpringArm3D" parent="." unique_id=844238536]
+transform = Transform3D(0.99999803, -7.1054274e-15, 0, 0, -4.3711324e-08, -0.9999987, 7.1054274e-15, 0.99999815, -4.3711307e-08, 0.6032208, 0.098581314, -0.4785061)
+collision_mask = 2
+spring_length = 4.0
+
+[node name="Step_target" type="Marker3D" parent="SpringArm" unique_id=215533507]
+transform = Transform3D(0.22702107, 0.6880375, 0.68924963, 0.4937874, -0.6913318, 0.5274734, 0.83942246, 0.2205955, -0.49669167, 0.15489939, -0.030096292, 0.903139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArm/Step_target" unique_id=1105127418]
+mesh = SubResource("SphereMesh_tr064")
+
+[node name="IK_Target" type="Marker3D" parent="." unique_id=643890439]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 1.0295695, -0.5038227, -4.8414095e-10)
+top_level = true
