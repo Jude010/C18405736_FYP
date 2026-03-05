@@ -5,7 +5,10 @@
 [node name="quadraped" unique_id=325317969 instance=ExtResource("1_ny2kr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(487059530) index="5" unique_id=412513962]
+[node name="body" parent="Armature/Skeleton3D/Body" parent_id_path=PackedInt32Array(1455771761) index="0" unique_id=1600755805]
+layers = 2
+
+[node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1270650916) index="5" unique_id=412513962]
 setting_count = 4
 settings/0/target_node = NodePath("FrontLeft_target")
 settings/1/target_node = NodePath("FrontRight_target")
@@ -61,13 +64,23 @@ settings/3/joints/2/rotation_axis = 3
 settings/3/joints/2/limitation = null
 
 [node name="FrontLeft_target" type="Marker3D" parent="Armature/Skeleton3D/FABRIK3D" index="0" unique_id=1463657261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2327087, -0.40497413, 0.6604004)
+transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.6604004, -2.239328, -0.68968064)
+top_level = true
 
 [node name="FrontRight_target" type="Marker3D" parent="Armature/Skeleton3D/FABRIK3D" index="1" unique_id=1156747205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9833117, -0.4167064, -0.6119732)
+transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.6119732, -1.990169, -0.70568985)
+top_level = true
 
 [node name="BackLeft_target" type="Marker3D" parent="Armature/Skeleton3D/FABRIK3D" index="2" unique_id=1418674168]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -5.551115e-17, 0, 1, 1.9823807, 0.948167, 0.62290096)
+transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.622901, -1.9658221, 0.65896684)
+top_level = true
 
 [node name="BackRight_target" type="Marker3D" parent="Armature/Skeleton3D/FABRIK3D" index="3" unique_id=1691960523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.273377, 0.9270639, -0.63382906)
+transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.633829, -2.2571375, 0.64285916)
+top_level = true
+
+[node name="SubViewport" type="SubViewport" parent="Armature" parent_id_path=PackedInt32Array(1470724264) index="1" unique_id=553169106]
+
+[node name="Camera3D" type="Camera3D" parent="Armature/SubViewport" index="0" unique_id=1960187573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9325656)
+cull_mask = 1048573
