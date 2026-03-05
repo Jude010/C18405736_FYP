@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://bu3mn3akm54ih"]
 
 [ext_resource type="PackedScene" uid="uid://cbb5qfjkavlfk" path="res://quadraped.blend" id="1_ny2kr"]
+[ext_resource type="Script" uid="uid://c8uugmi011lxr" path="res://quadraped.gd" id="2_3aa5h"]
 
 [node name="quadraped" unique_id=325317969 instance=ExtResource("1_ny2kr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("2_3aa5h")
+
+[node name="Camera_Marker" type="Node3D" parent="." index="0" unique_id=1020077780]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9325656, 0, 4.0763737e-08)
 
 [node name="body" parent="Armature/Skeleton3D/Body" parent_id_path=PackedInt32Array(1455771761) index="0" unique_id=1600755805]
 layers = 2
@@ -78,9 +83,3 @@ top_level = true
 [node name="BackRight_target" type="Marker3D" parent="Armature/Skeleton3D/FABRIK3D" index="3" unique_id=1691960523]
 transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.633829, -2.2571375, 0.64285916)
 top_level = true
-
-[node name="SubViewport" type="SubViewport" parent="Armature" parent_id_path=PackedInt32Array(1470724264) index="1" unique_id=553169106]
-
-[node name="Camera3D" type="Camera3D" parent="Armature/SubViewport" index="0" unique_id=1960187573]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9325656)
-cull_mask = 1048573
