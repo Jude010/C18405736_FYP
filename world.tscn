@@ -52,6 +52,7 @@ mesh = SubResource("PlaneMesh_dwbse")
 
 [node name="biped" parent="." unique_id=1569417417 instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2690643, -0.56625175, 0.47119194)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1611717442]
 transform = Transform3D(-0.94823116, -0.12987109, 0.2898125, 0.08266293, 0.7801749, 0.62007594, -0.30663437, 0.61193204, -0.7290505, 1.6828055, 2.9455957, -3.8135173)
@@ -72,12 +73,12 @@ mesh = SubResource("BoxMesh_f3sb7")
 shape = SubResource("BoxShape3D_fj7yv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124091544]
-transform = Transform3D(0.71657807, 0.69727194, 0.018104374, 0.057439834, -0.08485828, 0.9947361, 0.6951378, -0.71176636, -0.10085884, -3.903089, 1.6672466, -1.482544)
+transform = Transform3D(-0.71244264, 0.70172536, -0.002682183, 7.8837964e-11, -0.0038222424, -0.9999926, -0.7017304, -0.7124375, 0.002723128, -3.903089, 1.6672466, -1.482544)
 layers = 2
 mesh = SubResource("PlaneMesh_tlwt5")
 
 [node name="quadraped" parent="." unique_id=325317969 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5601532, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5601532, 0)
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=553169106]
 
