@@ -169,16 +169,38 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aa5h"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_dak58"]
-material = SubResource("StandardMaterial3D_3aa5h")
-
 [node name="quadNode" type="Node3D" unique_id=1317840261]
 script = ExtResource("2_3aa5h")
 
 [node name="Body" type="CharacterBody3D" parent="." unique_id=1223328751]
+collision_mask = 3
+
+[node name="springs" type="Node" parent="Body" unique_id=1325103407]
+
+[node name="SpringArmBackRight" type="SpringArm3D" parent="Body/springs" unique_id=1159034057]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6051955, 5.3036704e-08, 0.6385986)
+collision_mask = 2
+
+[node name="Back_right_spring" type="Marker3D" parent="Body/springs/SpringArmBackRight" unique_id=1117180272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3005003, 0.008872688)
+
+[node name="SpringArmBackLeft" type="SpringArm3D" parent="Body/springs" unique_id=1935929896]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.60814285, 5.6846666e-08, 0.61932725)
+collision_mask = 2
+
+[node name="Back_left_spring" type="Marker3D" parent="Body/springs/SpringArmBackLeft" unique_id=603260610]
+
+[node name="SpringArmFrontRight" type="SpringArm3D" parent="Body/springs" unique_id=1423428704]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.6246825, 0.0132851, -0.68117285)
+collision_mask = 2
+
+[node name="Front_right_spring" type="Marker3D" parent="Body/springs/SpringArmFrontRight" unique_id=476790007]
+
+[node name="SpringArmFrontLeft" type="SpringArm3D" parent="Body/springs" unique_id=1927394905]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -0.60814285, 0, -0.6811729)
+collision_mask = 2
+
+[node name="Front_left_spring" type="Marker3D" parent="Body/springs/SpringArmFrontLeft" unique_id=457212629]
 
 [node name="Camera_Marker" type="Node3D" parent="Body" unique_id=1020077780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9325656)
@@ -371,7 +393,7 @@ settings/3/joints/2/rotation_axis = 3
 settings/3/joints/2/limitation = null
 
 [node name="FrontLeft_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1463657261]
-transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.6604004, -2.239328, -0.68968064)
+transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.66040045, -2.2393277, -0.6896806)
 top_level = true
 
 [node name="FrontRight_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1156747205]
@@ -385,32 +407,3 @@ top_level = true
 [node name="BackRight_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1691960523]
 transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.633829, -2.2571375, 0.64285916)
 top_level = true
-
-[node name="springs" type="Node" parent="." unique_id=1325103407]
-
-[node name="SpringArmBackRight" type="SpringArm3D" parent="springs" unique_id=1159034057]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.60814285, 0, -0.6811729)
-
-[node name="Back_right_spring" type="Marker3D" parent="springs/SpringArmBackRight" unique_id=1117180272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3005003, 0.008872688)
-
-[node name="SpringArmBackLeft" type="SpringArm3D" parent="springs" unique_id=1935929896]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.60814285, 5.6846666e-08, 0.61932725)
-
-[node name="Back_left_spring" type="Marker3D" parent="springs/SpringArmBackLeft" unique_id=603260610]
-
-[node name="SpringArmFrontRight" type="SpringArm3D" parent="springs" unique_id=1423428704]
-transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.6246824, -0.6811729, -0.68117285)
-
-[node name="Front_right_spring" type="Marker3D" parent="springs/SpringArmFrontRight" unique_id=476790007]
-
-[node name="SpringArmFrontLeft" type="SpringArm3D" parent="springs" unique_id=1927394905]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -0.60814285, 0, -0.6811729)
-collision_mask = 2
-spring_length = 5.0
-
-[node name="Front_left_spring" type="Marker3D" parent="springs/SpringArmFrontLeft" unique_id=457212629]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="springs/SpringArmFrontLeft/Front_left_spring" unique_id=653460458]
-layers = 3
-mesh = SubResource("SphereMesh_dak58")

@@ -62,7 +62,7 @@ current = true
 transform = Transform3D(0.80137914, 0.49377128, 0.3376114, 0, -0.56441957, 0.8254881, 0.5981568, -0.6615289, -0.45231405, 2.1354883, 3.6968954, -3.3164425)
 
 [node name="obstacle" type="StaticBody3D" parent="." unique_id=1909642976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588437, -0.0765605, 1.4657533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8426805, -0.0765605, 1.4657533)
 collision_layer = 3
 collision_mask = 3
 

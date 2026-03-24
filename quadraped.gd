@@ -4,10 +4,13 @@ extends Node3D
 @export var speed_r:int = 3
 
 func _process(_delta: float) -> void:
-	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target.position = $springs/SpringArmFrontLeft/Front_left_spring.position
-	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontRight_target.position = $springs/SpringArmFrontRight/Front_right_spring.position
-	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/BackLeft_target.position = $springs/SpringArmBackLeft/Back_left_spring.position
-	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/BackRight_target.position = $springs/SpringArmBackRight/Back_right_spring.position
+	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target.position = $Body/springs/SpringArmFrontLeft/Front_left_spring.position
+	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontRight_target.position = $Body/springs/SpringArmFrontRight/Front_right_spring.position
+	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/BackLeft_target.position = $Body/springs/SpringArmBackLeft/Back_left_spring.position
+	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/BackRight_target.position = $Body/springs/SpringArmBackRight/Back_right_spring.position
+	
+	print($Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target.position)
+	print($Body/springs/SpringArmFrontLeft/Front_left_spring.position)
 
 func _physics_process(delta: float) -> void:
 	var dir:Vector3 = Vector3.ZERO
