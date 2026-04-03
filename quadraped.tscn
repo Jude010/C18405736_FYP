@@ -2,7 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c8uugmi011lxr" path="res://quadraped.gd" id="2_3aa5h"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ny2kr"]
+albedo_color = Color(0, 0.23921569, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3aa5h"]
+material = SubResource("StandardMaterial3D_ny2kr")
+radius = 0.1
+height = 0.2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ny2kr"]
+size = Vector3(1, 0.5996094, 1.9991455)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcpmx"]
 resource_name = "Material"
@@ -169,38 +178,53 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dak58"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fulsv"]
+material = SubResource("StandardMaterial3D_dak58")
+radius = 0.1
+height = 0.2
+
 [node name="quadNode" type="Node3D" unique_id=1317840261]
 script = ExtResource("2_3aa5h")
 
 [node name="Body" type="CharacterBody3D" parent="." unique_id=1223328751]
 collision_mask = 3
 
-[node name="springs" type="Node" parent="Body" unique_id=1325103407]
+[node name="springs" type="Node3D" parent="Body" unique_id=1346973566]
 
 [node name="SpringArmBackRight" type="SpringArm3D" parent="Body/springs" unique_id=1159034057]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6051955, 5.3036704e-08, 0.6385986)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.60238945, 5.3036704e-08, 0.6385986)
 collision_mask = 2
+spring_length = 4.0
 
 [node name="Back_right_spring" type="Marker3D" parent="Body/springs/SpringArmBackRight" unique_id=1117180272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3005003, 0.008872688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8034047e-08, 0.027164102, 0.008872688)
 
 [node name="SpringArmBackLeft" type="SpringArm3D" parent="Body/springs" unique_id=1935929896]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.60814285, 5.6846666e-08, 0.61932725)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.60814285, 5.6846666e-08, 0.61932725)
 collision_mask = 2
+spring_length = 4.0
 
 [node name="Back_left_spring" type="Marker3D" parent="Body/springs/SpringArmBackLeft" unique_id=603260610]
 
 [node name="SpringArmFrontRight" type="SpringArm3D" parent="Body/springs" unique_id=1423428704]
-transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.6246825, 0.0132851, -0.68117285)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.6246825, 0.0132851, -0.68117285)
 collision_mask = 2
+spring_length = 4.0
 
 [node name="Front_right_spring" type="Marker3D" parent="Body/springs/SpringArmFrontRight" unique_id=476790007]
 
 [node name="SpringArmFrontLeft" type="SpringArm3D" parent="Body/springs" unique_id=1927394905]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -0.60814285, 0, -0.6811729)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.60814285, 0, -0.6811729)
 collision_mask = 2
+spring_length = 4.0
 
 [node name="Front_left_spring" type="Marker3D" parent="Body/springs/SpringArmFrontLeft" unique_id=457212629]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/springs/SpringArmFrontLeft/Front_left_spring" unique_id=1545956465]
+mesh = SubResource("SphereMesh_3aa5h")
 
 [node name="Camera_Marker" type="Node3D" parent="Body" unique_id=1020077780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9325656)
@@ -395,6 +419,9 @@ settings/3/joints/2/limitation = null
 [node name="FrontLeft_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1463657261]
 transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.66040045, -2.2393277, -0.6896806)
 top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target" unique_id=1958253233]
+mesh = SubResource("SphereMesh_fulsv")
 
 [node name="FrontRight_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1156747205]
 transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.6119732, -1.990169, -0.70568985)

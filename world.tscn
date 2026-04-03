@@ -51,8 +51,7 @@ layers = 3
 mesh = SubResource("PlaneMesh_dwbse")
 
 [node name="biped" parent="." unique_id=1569417417 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2690643, -0.56625175, 0.47119194)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.991304, -0.56625175, 0.47119194)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1611717442]
 transform = Transform3D(-0.94823116, -0.12987109, 0.2898125, 0.08266293, 0.7801749, 0.62007594, -0.30663437, 0.61193204, -0.7290505, 1.6828055, 2.9455957, -3.8135173)

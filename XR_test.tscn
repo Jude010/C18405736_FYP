@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://d1pxc62wsvn8" path="res://xr_test.gd" id="1_trxxl"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_trxxl"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_cj746"]
+radius = 0.1
+height = 0.2
+
 [node name="Node3D" type="Node3D" unique_id=1493577239]
 script = ExtResource("1_trxxl")
 
@@ -14,6 +22,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand" unique_id=863911734]
+mesh = SubResource("SphereMesh_trxxl")
+
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=378464464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand" unique_id=795121266]
+mesh = SubResource("SphereMesh_cj746")
