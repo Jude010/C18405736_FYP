@@ -362,41 +362,47 @@ skin = SubResource("Skin_1pqun")
 skeleton = NodePath("..")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Body/quadraped/Armature/Skeleton3D" unique_id=412513962]
-setting_count = 4
-settings/0/target_node = NodePath("FrontLeft_target")
-settings/1/target_node = NodePath("FrontRight_target")
-settings/2/target_node = NodePath("BackLeft_target")
-settings/3/target_node = NodePath("BackRight_target")
+deterministic = true
+setting_count = 5
+settings/0/target_node = NodePath("FrontLeft_knee")
+settings/1/target_node = NodePath("FrontLeft_target")
+settings/2/target_node = NodePath("FrontRight_target")
+settings/3/target_node = NodePath("BackLeft_target")
+settings/4/target_node = NodePath("BackRight_target")
 settings/0/root_bone_name = "UpperLeg.f.l"
 settings/0/root_bone = 1
-settings/0/end_bone_name = "Foot.f.l"
-settings/0/end_bone = 3
+settings/0/end_bone_name = "LowerLeg.f.l"
+settings/0/end_bone = 2
 settings/0/extend_end_bone = false
-settings/0/joint_count = 3
-settings/1/root_bone_name = "UpperLeg.f.r"
-settings/1/root_bone = 10
-settings/1/end_bone_name = "Foot.f.r"
-settings/1/end_bone = 12
+settings/0/joint_count = 2
+settings/1/root_bone_name = "UpperLeg.f.l"
+settings/1/root_bone = 1
+settings/1/end_bone_name = "Foot.f.l"
+settings/1/end_bone = 3
 settings/1/extend_end_bone = false
 settings/1/joint_count = 3
-settings/2/root_bone_name = "UpperLeg.b.l"
-settings/2/root_bone = 4
-settings/2/end_bone_name = "Foot.b.l"
-settings/2/end_bone = 6
+settings/2/root_bone_name = "UpperLeg.f.r"
+settings/2/root_bone = 10
+settings/2/end_bone_name = "Foot.f.r"
+settings/2/end_bone = 12
 settings/2/extend_end_bone = false
 settings/2/joint_count = 3
-settings/3/root_bone_name = "UpperLeg.b.r"
-settings/3/root_bone = 7
-settings/3/end_bone_name = "Foot.b.r"
-settings/3/end_bone = 9
+settings/3/root_bone_name = "UpperLeg.b.l"
+settings/3/root_bone = 4
+settings/3/end_bone_name = "Foot.b.l"
+settings/3/end_bone = 6
 settings/3/extend_end_bone = false
 settings/3/joint_count = 3
+settings/4/root_bone_name = "UpperLeg.b.r"
+settings/4/root_bone = 7
+settings/4/end_bone_name = "Foot.b.r"
+settings/4/end_bone = 9
+settings/4/extend_end_bone = false
+settings/4/joint_count = 3
 settings/0/joints/0/rotation_axis = 3
 settings/0/joints/0/limitation = null
 settings/0/joints/1/rotation_axis = 3
 settings/0/joints/1/limitation = null
-settings/0/joints/2/rotation_axis = 3
-settings/0/joints/2/limitation = null
 settings/1/joints/0/rotation_axis = 3
 settings/1/joints/0/limitation = null
 settings/1/joints/1/rotation_axis = 3
@@ -415,17 +421,30 @@ settings/3/joints/1/rotation_axis = 3
 settings/3/joints/1/limitation = null
 settings/3/joints/2/rotation_axis = 3
 settings/3/joints/2/limitation = null
+settings/4/joints/0/rotation_axis = 3
+settings/4/joints/0/limitation = null
+settings/4/joints/1/rotation_axis = 3
+settings/4/joints/1/limitation = null
+settings/4/joints/2/rotation_axis = 3
+settings/4/joints/2/limitation = null
 
 [node name="FrontLeft_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1463657261]
-transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.66040045, -2.2393277, -0.6896806)
+transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.66040045, -1.4369748, -1.3992519)
 top_level = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target" unique_id=1958253233]
+visible = false
 mesh = SubResource("SphereMesh_fulsv")
+
+[node name="FrontLeft_knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=418805449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -4.440892e-16, 0, 1, 0.88189983, -0.6544483, 0.66040057)
 
 [node name="FrontRight_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1156747205]
 transform = Transform3D(-7.4992584e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, 0.6119732, -1.990169, -0.70568985)
 top_level = true
+
+[node name="FrontRight_knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1733659949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -5.551115e-17, 0, 1, 0, 0, 0)
 
 [node name="BackLeft_target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/FABRIK3D" unique_id=1418674168]
 transform = Transform3D(-7.499258e-10, -4.3704958e-08, -1, -0.9998529, 0.017156303, 0, 0.017156303, 0.9998529, -4.371139e-08, -0.622901, -1.9658221, 0.65896684)
