@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by5y774a3ycrf"]
 
 [ext_resource type="PackedScene" uid="uid://bhyktxwbpkx6e" path="res://Biped.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://bu3mn3akm54ih" path="res://quadraped.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://3mjnl6yovd6o" path="res://quadroped_2.tscn" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://dmfagdhn5yxe0" path="res://View_Camera.gd" id="3_aqk2v"]
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
@@ -33,6 +33,9 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="world" type="Node3D" unique_id=260490492]
+
+[node name="quadraped" parent="." unique_id=1236935582 instance=ExtResource("1_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.372039, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=597205167]
 environment = SubResource("Environment_fj7yv")
@@ -75,9 +78,6 @@ shape = SubResource("BoxShape3D_fj7yv")
 transform = Transform3D(-0.71244264, 0.70172536, -0.002682183, 7.8837964e-11, -0.0038222424, -0.9999926, -0.7017304, -0.7124375, 0.002723128, -3.903089, 1.6672466, -1.482544)
 layers = 2
 mesh = SubResource("PlaneMesh_tlwt5")
-
-[node name="quadraped" parent="." unique_id=325317969 instance=ExtResource("2_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5601532, 0)
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=553169106]
 

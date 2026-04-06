@@ -3,7 +3,10 @@ extends Node3D
 @export var speed:float = 100
 @export var speed_r:int = 3
 
-func _process(_delta: float) -> void:
+
+	
+
+func _ready() -> void:
 	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontLeft_target.global_position = $Body/springs/SpringArmFrontLeft/Front_left_spring.global_position
 	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/FrontRight_target.global_position = $Body/springs/SpringArmFrontRight/Front_right_spring.global_position
 	$Body/quadraped/Armature/Skeleton3D/FABRIK3D/BackLeft_target.global_position = $Body/springs/SpringArmBackLeft/Back_left_spring.global_position

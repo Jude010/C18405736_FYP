@@ -362,6 +362,7 @@ skin = SubResource("Skin_1pqun")
 skeleton = NodePath("..")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Body/quadraped/Armature/Skeleton3D" unique_id=412513962]
+angular_delta_limit = 0.8287521420169874
 deterministic = true
 setting_count = 5
 settings/0/target_node = NodePath("FrontLeft_knee")
