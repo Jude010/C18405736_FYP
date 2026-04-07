@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhyktxwbpkx6e" path="res://Biped.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://3mjnl6yovd6o" path="res://quadroped_2.tscn" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://dmfagdhn5yxe0" path="res://View_Camera.gd" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://b6nfoof524ww7" path="res://XR_test.tscn" id="4_aqk2v"]
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
 background_energy_multiplier = 0.6
@@ -85,3 +86,6 @@ mesh = SubResource("PlaneMesh_tlwt5")
 transform = Transform3D(-0.981104, 0, -0.19348112, -0.0894205, 0.88679314, 0.45343345, 0.17157772, 0.46216655, -0.8700363, 2.0480347, 2.3915462, -4.1039386)
 cull_mask = 1048573
 script = ExtResource("3_aqk2v")
+
+[node name="Node3D" parent="." unique_id=1493577239 instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8137374)
