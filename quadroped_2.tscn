@@ -299,6 +299,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t6ob5")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4k2u"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pkheu"]
+material = SubResource("StandardMaterial3D_u4k2u")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3y5h"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u4k2u"]
+material = SubResource("StandardMaterial3D_n3y5h")
+radius = 0.1
+
 [node name="Node3D" type="Node3D" unique_id=1236935582]
 script = ExtResource("1_n3y5h")
 
@@ -447,7 +462,7 @@ transform = Transform3D(-1.9711156, 0.0073152846, -0.0007336195, -0.026871147, -
 mesh = SubResource("ArrayMesh_kfguh")
 
 [node name="LowerLeg_b_r" type="BoneAttachment3D" parent="Body/quadraped/Armature/Skeleton3D" unique_id=1677641598]
-transform = Transform3D(-0.037266426, 0.9989929, -0.024998384, -0.9974815, -0.03567601, 0.061305843, 0.060352225, 0.027220074, 0.9978061, 0.9970337, 0.88406765, -0.5835737)
+transform = Transform3D(-0.03730045, 0.9989799, -0.025462648, -0.9974341, -0.035660353, 0.062082842, 0.06111147, 0.027713025, 0.9977463, 0.9970545, 0.88404226, -0.58437407)
 bone_name = "LowerLeg.b.r"
 bone_idx = 8
 
@@ -456,7 +471,7 @@ transform = Transform3D(-1.9696338, -0.0058143684, 0.03916861, 0.025140902, -0.4
 mesh = SubResource("ArrayMesh_1a7es")
 
 [node name="UpperLeg_b_r" type="BoneAttachment3D" parent="Body/quadraped/Armature/Skeleton3D" unique_id=860799663]
-transform = Transform3D(-0.059206363, 0.99788177, -0.026961321, -0.9980461, -0.05863245, 0.02160407, 0.019977495, 0.028187739, 0.999403, -0.00094985776, 0.94270617, -0.6117643)
+transform = Transform3D(-0.059234925, 0.9979026, -0.026115764, -0.9980285, -0.058657832, 0.022337737, 0.020758985, 0.027387448, 0.9994093, -0.00094985776, 0.94270617, -0.6117643)
 bone_name = "UpperLeg.b.r"
 bone_idx = 7
 
@@ -523,6 +538,9 @@ settings/1/joints/2/limitation = null
 [node name="target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFL" unique_id=512614231]
 transform = Transform3D(0.00096404005, -0.0023520954, -0.9999968, -0.9996766, 0.025407651, -0.0010234879, 0.025409978, 0.9996745, -0.0023268587, -0.47258195, -2.5566952, -0.62130404)
 top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/quadraped/Armature/Skeleton3D/LegFL/target" unique_id=1063755448]
+mesh = SubResource("SphereMesh_pkheu")
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFL" unique_id=1337440696]
 transform = Transform3D(1.0000012, -7.450581e-09, 0, 0, 1.0000012, 0, -1.8189894e-12, -4.7293724e-11, 1, -0.021746924, -1.7734536, 0.57220024)
@@ -642,7 +660,7 @@ transform = Transform3D(-8.344649e-07, -5.6594614e-05, -1, -0.9998529, 0.0171562
 top_level = true
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBR" unique_id=2011288867]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, -2.2737368e-13, -3.637979e-12, 1, -4.8661605e-07, -3.2305717e-05, -0.5708274)
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, -4.5474735e-13, -7.275958e-12, 1, -5.3225085e-07, -3.530085e-05, -0.62384003)
 
 [node name="shoulder" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBR" unique_id=1275935380]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, -4.5474735e-13, -7.275958e-12, 1, 0.016790826, 0.9785517, -0.700357)
@@ -650,27 +668,30 @@ transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, -4.5474735e-13, -7.275
 [node name="SpringArmFL" type="SpringArm3D" parent="." unique_id=1548817625]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.57172656, 0, -0.62467945)
 collision_mask = 2
-spring_length = 2.0
+spring_length = 4.0
 
 [node name="Spring" type="Marker3D" parent="SpringArmFL" unique_id=1476539936]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArmFL/Spring" unique_id=380521087]
+mesh = SubResource("SphereMesh_u4k2u")
 
 [node name="SpringArmFR" type="SpringArm3D" parent="." unique_id=1865724726]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.56831384, 0, -0.62467945)
 collision_mask = 2
-spring_length = 2.0
+spring_length = 4.0
 
 [node name="Spring" type="Marker3D" parent="SpringArmFR" unique_id=1191330725]
 
 [node name="SpringArmBL" type="SpringArm3D" parent="." unique_id=2078792763]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.587342, 0, 0.67152977)
 collision_mask = 2
-spring_length = 2.0
+spring_length = 4.0
 
 [node name="Spring" type="Marker3D" parent="SpringArmBL" unique_id=96339598]
 
 [node name="SpringArmBR" type="SpringArm3D" parent="." unique_id=1574469879]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.60906315, 0, 0.68714786)
 collision_mask = 2
-spring_length = 2.0
+spring_length = 4.0
 
 [node name="Spring" type="Marker3D" parent="SpringArmBR" unique_id=1459077358]

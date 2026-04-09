@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://d1pxc62wsvn8" path="res://xr_test.gd" id="1_trxxl"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_trxxl"]
-radius = 0.1
-height = 0.2
+radius = 0.05
+height = 0.1
 
 [sub_resource type="SphereMesh" id="SphereMesh_cj746"]
-radius = 0.1
-height = 0.2
+radius = 0.05
+height = 0.1
 
-[node name="Node3D" type="Node3D" unique_id=1493577239]
+[node name="VR_body" type="Node3D" unique_id=1493577239]
 script = ExtResource("1_trxxl")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=341221193]
@@ -31,3 +31,5 @@ tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand" unique_id=795121266]
 mesh = SubResource("SphereMesh_cj746")
+
+[connection signal="input_vector2_changed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_input_vector_2_changed"]
