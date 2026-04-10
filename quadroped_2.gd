@@ -6,6 +6,7 @@ extends Node3D
 @export var leg_len:float = 1
 
 var dir:Vector3 = Vector3.ZERO
+var rot:float = 0
 
 func walk(delta:float , body:CharacterBody3D) -> void:
 	var fltarget = $Body/quadraped/Armature/Skeleton3D/LegFL/target
@@ -46,7 +47,7 @@ func step(delta:float , body:CharacterBody3D , target:Marker3D ,shoulder:Marker3
 
 	
 func _physics_process(delta: float) -> void:
-	var rot:int = 0
+	
 	var body:CharacterBody3D = $Body
 	
 	
@@ -74,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	##if Input.is_action_pressed("space"):
 	##	dir = dir + Vector3.UP
 	
-	##body.rotate_y(speed_r * rot * delta)#/
+	body.rotate_y(speed_r * rot * delta)#/
 	
 	body.velocity = body.global_transform.basis * dir * speed * delta
 	
@@ -83,17 +84,17 @@ func _physics_process(delta: float) -> void:
 	body.move_and_slide()
 	
 
-
+## movement X/Z
 func _on_right_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
 	if name == "primary":
 		dir = Vector3(value[0],dir[1],-value[1])
 	 
-
+## movement Y
 func _on_right_hand_input_float_changed(name: String, value: float) -> void:
 	if name == "trigger" :
-		dir.y += value
+		dir.y = value
 	if name == "grip" :
-		dir.y -= value		
+		dir.y = -value		
 		
 
 func _on_right_hand_button_released(name: String) -> void:
@@ -102,6 +103,10 @@ func _on_right_hand_button_released(name: String) -> void:
 
 func _on_right_hand_button_pressed(name: String) -> void:
 	if name == "trigger_click":
-		dir.y += 1
+		dir.y = 1
 	if name == "grip_click":
-		dir.y -= 1
+		dir.y = -1
+		
+## movement rotation
+func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
+	rot = value[0]
