@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://by5y774a3ycrf"]
 
-[ext_resource type="PackedScene" uid="uid://bhyktxwbpkx6e" path="res://Biped.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://3mjnl6yovd6o" path="res://quadroped_2.tscn" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://dmfagdhn5yxe0" path="res://View_Camera.gd" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://vskfygfseush" path="res://pointer.tscn" id="4_036b0"]
 [ext_resource type="Script" uid="uid://d1pxc62wsvn8" path="res://xr_test.gd" id="4_aqk2v"]
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
@@ -37,13 +37,19 @@ albedo_texture = SubResource("ViewportTexture_f3sb7")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_fj7yv")
 
-[sub_resource type="SphereMesh" id="SphereMesh_trxxl"]
-radius = 0.05
-height = 0.1
+[sub_resource type="ViewportTexture" id="ViewportTexture_aqk2v"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="SphereMesh" id="SphereMesh_cj746"]
-radius = 0.05
-height = 0.1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_aqk2v")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_dwbse"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_036b0")
 
 [node name="world" type="Node3D" unique_id=260490492]
 
@@ -66,13 +72,6 @@ shape = SubResource("WorldBoundaryShape3D_036b0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1662792494]
 layers = 3
 mesh = SubResource("PlaneMesh_dwbse")
-
-[node name="biped" parent="." unique_id=1569417417 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.991304, -0.086462855, 0.47119194)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1611717442]
-transform = Transform3D(-0.94823116, -0.12987109, 0.2898125, 0.08266293, 0.7801749, 0.62007594, -0.30663437, 0.61193204, -0.7290505, 1.6828055, 2.9455957, -3.8135173)
-current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2122758631]
 transform = Transform3D(0.80137914, 0.49377128, 0.3376114, 0, -0.56441957, 0.8254881, 0.5981568, -0.6615289, -0.45231405, 2.1354883, 3.6968954, -3.3164425)
@@ -113,15 +112,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VR_body/XROrigin3D/RightHand" unique_id=863911734]
-mesh = SubResource("SphereMesh_trxxl")
+[node name="Node3D" parent="VR_body/XROrigin3D/RightHand" unique_id=306903131 instance=ExtResource("4_036b0")]
 
 [node name="LeftHand" type="XRController3D" parent="VR_body/XROrigin3D" unique_id=378464464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VR_body/XROrigin3D/LeftHand" unique_id=795121266]
-mesh = SubResource("SphereMesh_cj746")
+[node name="Screen" type="MeshInstance3D" parent="VR_body/XROrigin3D/LeftHand" unique_id=497937548]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.20918834, 0.018070698)
+layers = 2
+mesh = SubResource("QuadMesh_dwbse")
+
+[node name="Node3D" parent="VR_body/XROrigin3D/LeftHand" unique_id=348512770 instance=ExtResource("4_036b0")]
 
 [connection signal="button_pressed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_pressed"]
 [connection signal="button_released" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_released"]
