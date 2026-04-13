@@ -7,6 +7,7 @@ extends Node3D
 
 var dir:Vector3 = Vector3.ZERO
 var rot:float = 0
+var rot_x:float = 0
 
 func walk(delta:float , body:CharacterBody3D) -> void:
 	var fltarget = $Body/quadraped/Armature/Skeleton3D/LegFL/target
@@ -76,12 +77,22 @@ func _physics_process(delta: float) -> void:
 	##	dir = dir + Vector3.UP
 	
 	body.rotate_y(speed_r * rot * delta)
+	body.rotate_object_local(Vector3.RIGHT , rot_x * delta* speed_r)
+	
+	if body.global_position.y - global_position.y > 0.099 :
+		dir = dir * Vector3.UP
+	
+	if (body.global_position.y - global_position.y) + (dir.y * delta) > 0.5 :
+		dir.y = 0
 	
 	body.velocity = body.global_transform.basis * dir * speed * delta
 	
 	walk(delta , body)
 		
 	body.move_and_slide()
+	
+	#print(body.global_position)
+	#print(global_position)
 	
 
 ## movement X/Z
@@ -106,7 +117,12 @@ func _on_right_hand_button_pressed(name: String) -> void:
 		dir.y = 1
 	if name == "grip_click":
 		dir.y = -1
+	if name == "ax_button":
+		print($Body.global_position.y - global_position.y)
+		$Body.global_position.y = global_position.y
+	
 		
 ## movement rotation
 func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
 	rot = -value[0]
+	rot_x = value[1]
