@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dmfagdhn5yxe0" path="res://View_Camera.gd" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://vskfygfseush" path="res://pointer.tscn" id="4_036b0"]
 [ext_resource type="Script" uid="uid://d1pxc62wsvn8" path="res://xr_test.gd" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cquhkmkppx6n3" path="res://terrain.tscn" id="5_036b0"]
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
 background_energy_multiplier = 0.6
@@ -112,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="Node3D" parent="VR_body/XROrigin3D/RightHand" unique_id=306903131 instance=ExtResource("4_036b0")]
+[node name="Pointer" parent="VR_body/XROrigin3D/RightHand" unique_id=306903131 instance=ExtResource("4_036b0")]
 
 [node name="LeftHand" type="XRController3D" parent="VR_body/XROrigin3D" unique_id=378464464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -123,7 +124,14 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.20918834, 0.01807
 layers = 2
 mesh = SubResource("QuadMesh_dwbse")
 
-[node name="Node3D" parent="VR_body/XROrigin3D/LeftHand" unique_id=348512770 instance=ExtResource("4_036b0")]
+[node name="Pointer" parent="VR_body/XROrigin3D/LeftHand" unique_id=348512770 instance=ExtResource("4_036b0")]
+
+[node name="Terrain" parent="." unique_id=1511663395 instance=ExtResource("5_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8110676, 0)
+collision_mask = 3
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Terrain" unique_id=1380731063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.692269, 0.19823909, 0)
 
 [connection signal="button_pressed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_pressed"]
 [connection signal="button_released" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_released"]

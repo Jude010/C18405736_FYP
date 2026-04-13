@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vskfygfseush"]
 
-[node name="Node3D" type="CSGCombiner3D" unique_id=306903131]
+[node name="Pointer" type="CSGCombiner3D" unique_id=306903131]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=2081083805]
 radius = 0.05

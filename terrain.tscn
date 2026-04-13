@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cquhkmkppx6n3"]
+
+[node name="Terrain" type="CSGCombiner3D" unique_id=1511663395]
+use_collision = true
+collision_layer = 3
+
+[node name="start_wallls" type="CSGBox3D" parent="." unique_id=115661552]
+size = Vector3(10, 6.377, 10)
+
+[node name="tower_walls" type="CSGBox3D" parent="." unique_id=912706158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.479313, -0.1673708, 0.03515625)
+size = Vector3(3.1254272, 6.1488037, 4.4492188)
+
+[node name="tunnel_walls" type="CSGBox3D" parent="." unique_id=1832868513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.674846, -2.1847894, -0.078063965)
+size = Vector3(6.305298, 2.0281982, 2.0357666)
+
+[node name="start_interior" type="CSGBox3D" parent="." unique_id=1529222148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14133787, 0)
+operation = 2
+size = Vector3(9, 6.172324, 9)
+
+[node name="tunnel_interior" type="CSGBox3D" parent="." unique_id=352013610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5053406, -2.1921303, -0.09307861)
+operation = 2
+size = Vector3(6.722168, 1, 1.5841064)
+
+[node name="tower_interior" type="CSGBox3D" parent="." unique_id=1511957831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.533646, -0.023925781, 0.03479004)
+operation = 2
+size = Vector3(2.9255428, 5.323242, 3.548584)

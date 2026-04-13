@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	##if Input.is_action_pressed("space"):
 	##	dir = dir + Vector3.UP
 	
-	body.rotate_y(speed_r * rot * delta)#/
+	body.rotate_y(speed_r * rot * delta)
 	
 	body.velocity = body.global_transform.basis * dir * speed * delta
 	
@@ -109,4 +109,4 @@ func _on_right_hand_button_pressed(name: String) -> void:
 		
 ## movement rotation
 func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
-	rot = value[0]
+	rot = -value[0]
