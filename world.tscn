@@ -75,7 +75,7 @@ layers = 3
 mesh = SubResource("PlaneMesh_dwbse")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2122758631]
-transform = Transform3D(0.80137914, 0.49377128, 0.3376114, 0, -0.56441957, 0.8254881, 0.5981568, -0.6615289, -0.45231405, 2.1354883, 3.6968954, -3.3164425)
+transform = Transform3D(0.59481573, 0.3607222, 0.7183829, -0.33900255, -0.697747, 0.6310519, 0.72888386, -0.61889315, -0.2927451, 2.1354883, 12.433123, -3.3164425)
 
 [node name="obstacle" type="StaticBody3D" parent="." unique_id=1909642976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8426805, -0.0765605, 1.4657533)
@@ -96,7 +96,7 @@ mesh = SubResource("PlaneMesh_tlwt5")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=553169106]
 
 [node name="View_Camera" type="Camera3D" parent="SubViewport" unique_id=1960187573]
-transform = Transform3D(-0.981104, 0, -0.19348112, -0.0894205, 0.88679314, 0.45343345, 0.17157772, 0.46216655, -0.8700363, 2.0480347, 2.3915462, -4.1039386)
+transform = Transform3D(-0.9989144, -6.7055225e-08, 0.046583463, 0.031521, 0.7362979, 0.67592293, -0.03429935, 0.6766575, -0.7354986, 1.4089069, 7.058243, -4.541875)
 cull_mask = 1048573
 script = ExtResource("3_aqk2v")
 
@@ -132,6 +132,9 @@ collision_mask = 3
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Terrain" unique_id=1380731063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.692269, 0.19823909, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Terrain" unique_id=318804259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.218518, 2.396089, 11.042987)
 
 [connection signal="button_pressed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_pressed"]
 [connection signal="button_released" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_released"]

@@ -4,11 +4,24 @@
 use_collision = true
 collision_layer = 3
 
+[node name="Dome" type="CSGSphere3D" parent="." unique_id=1319623773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.077679, -1.6471684, 11.424255)
+radius = 5.0
+
 [node name="start_wallls" type="CSGBox3D" parent="." unique_id=115661552]
 size = Vector3(10, 6.377, 10)
 
 [node name="tower_walls" type="CSGBox3D" parent="." unique_id=912706158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.479313, -0.1673708, 0.03515625)
+size = Vector3(3.1254272, 6.1488037, 4.4492188)
+
+[node name="tower_interior" type="CSGBox3D" parent="." unique_id=1511957831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.533646, -0.023925781, 0.03479004)
+operation = 2
+size = Vector3(2.9255428, 5.323242, 3.548584)
+
+[node name="tower_walls2" type="CSGBox3D" parent="." unique_id=1925475496]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -18.811401, -0.1673708, 0.03515625)
 size = Vector3(3.1254272, 6.1488037, 4.4492188)
 
 [node name="tunnel_walls" type="CSGBox3D" parent="." unique_id=1832868513]
@@ -25,7 +38,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5053406, -2.1921303, -0.09
 operation = 2
 size = Vector3(6.722168, 1, 1.5841064)
 
-[node name="tower_interior" type="CSGBox3D" parent="." unique_id=1511957831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.533646, -0.023925781, 0.03479004)
+[node name="tunnel_walls2" type="CSGBox3D" parent="." unique_id=298504023]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -11.318203, -1.9290442, 4.367842)
+size = Vector3(6.305298, 2.0281982, 2.0357666)
+
+[node name="tunnel_interior2" type="CSGBox3D" parent="." unique_id=1292376027]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -11.333464, -1.9363852, 4.198359)
+operation = 2
+size = Vector3(6.722168, 1, 1.5841064)
+
+[node name="tunnel_walls3" type="CSGBox3D" parent="." unique_id=25988337]
+transform = Transform3D(-0.4766065, 0, 0.87911665, 0, 1, 0, -0.87911665, 0, -0.4766065, -15.682371, -1.4083718, 4.58481)
+size = Vector3(8.647293, 2.0281982, 2.0357666)
+
+[node name="tunnel_interior3" type="CSGBox3D" parent="." unique_id=1619181401]
+transform = Transform3D(-0.4766065, 0, 0.87911665, 0, 1, 0, -0.87911665, 0, -0.4766065, -15.693808, -1.0577415, 4.5957355)
+operation = 2
+size = Vector3(8.9852295, 1.7159424, 1.5841064)
+
+[node name="tower_interior2" type="CSGBox3D" parent="." unique_id=1291293152]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -18.865734, -0.023925781, 0.03479004)
 operation = 2
 size = Vector3(2.9255428, 5.323242, 3.548584)
+
+[node name="Dome_interior" type="CSGSphere3D" parent="." unique_id=463518160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.077679, -1.6471684, 11.424255)
+operation = 2
+radius = 4.5
+
+[node name="Dome_floor" type="CSGBox3D" parent="." unique_id=1147362660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.088533, -2.597182, 11.519028)
+size = Vector3(8.568176, 0.31921387, 8.557983)
