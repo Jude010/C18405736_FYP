@@ -5,16 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://vskfygfseush" path="res://pointer.tscn" id="4_036b0"]
 [ext_resource type="Script" uid="uid://d1pxc62wsvn8" path="res://xr_test.gd" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cquhkmkppx6n3" path="res://terrain.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://c1p5mmkkfu7uu" path="res://Child.tscn" id="6_dwbse"]
+
+[sub_resource type="Sky" id="Sky_036b0"]
 
 [sub_resource type="Environment" id="Environment_fj7yv"]
-background_energy_multiplier = 0.6
+background_mode = 2
+sky = SubResource("Sky_036b0")
 ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tlwt5"]
 
 [sub_resource type="Compositor" id="Compositor_aqk2v"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_036b0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
 albedo_color = Color(0, 0.57254905, 0, 1)
@@ -37,6 +39,11 @@ albedo_texture = SubResource("ViewportTexture_f3sb7")
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_fj7yv")
+orientation = 0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_036b0"]
+radius = 0.3
+height = 1.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_aqk2v"]
 viewport_path = NodePath("SubViewport")
@@ -52,10 +59,17 @@ billboard_keep_scale = true
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_036b0")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
+albedo_color = Color(1, 0.101960786, 0.3372549, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pkg7o"]
+material = SubResource("StandardMaterial3D_dwbse")
+
 [node name="world" type="Node3D" unique_id=260490492]
 
 [node name="quadraped" parent="." unique_id=1236935582 instance=ExtResource("1_tlwt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0907011, 1.3951929, 0)
+speed_r = 2
 leg_len = 0.75
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=597205167]
@@ -63,19 +77,9 @@ environment = SubResource("Environment_fj7yv")
 camera_attributes = SubResource("CameraAttributesPractical_tlwt5")
 compositor = SubResource("Compositor_aqk2v")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=497518629]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2140232428]
-shape = SubResource("WorldBoundaryShape3D_036b0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1662792494]
+[node name="grass" type="MeshInstance3D" parent="." unique_id=1662792494]
 layers = 3
 mesh = SubResource("PlaneMesh_dwbse")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2122758631]
-transform = Transform3D(0.59481573, 0.3607222, 0.7183829, -0.33900255, -0.697747, 0.6310519, 0.72888386, -0.61889315, -0.2927451, 2.1354883, 12.433123, -3.3164425)
 
 [node name="obstacle" type="StaticBody3D" parent="." unique_id=1909642976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8426805, -0.0765605, 1.4657533)
@@ -88,12 +92,16 @@ mesh = SubResource("BoxMesh_f3sb7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="obstacle" unique_id=1068343964]
 shape = SubResource("BoxShape3D_fj7yv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2124091544]
-transform = Transform3D(0.11367139, 0.9935113, -0.0037974669, 2.422223e-10, -0.003822242, -0.99999255, -0.9935184, 0.11367056, -0.00043447944, -3.903089, 1.6672466, -3.6055546)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2122758631]
+transform = Transform3D(0.59481573, 0.3607222, 0.7183829, -0.33900255, -0.697747, 0.6310519, 0.72888386, -0.61889315, -0.2927451, 2.1354883, 12.433123, -3.3164425)
+
+[node name="screen" type="MeshInstance3D" parent="." unique_id=2124091544]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999998, -1.569708, 3.7254884, -6.010173)
 layers = 2
 mesh = SubResource("PlaneMesh_tlwt5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=553169106]
+size = Vector2i(1024, 1024)
 
 [node name="View_Camera" type="Camera3D" parent="SubViewport" unique_id=1960187573]
 transform = Transform3D(-0.9989144, -6.7055225e-08, 0.046583463, 0.031521, 0.7362979, 0.67592293, -0.03429935, 0.6766575, -0.7354986, 1.4089069, 7.058243, -4.541875)
@@ -101,13 +109,19 @@ cull_mask = 1048573
 script = ExtResource("3_aqk2v")
 
 [node name="VR_body" type="Node3D" parent="." unique_id=1493577239]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -2.8137374)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.8294318, -5.794628)
 script = ExtResource("4_aqk2v")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="VR_body" unique_id=341221193]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="VR_body/XROrigin3D" unique_id=1142386966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+cull_mask = 1048571
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VR_body/XROrigin3D/XRCamera3D" unique_id=1801197426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.654058, 0)
+layers = 4
+mesh = SubResource("CapsuleMesh_036b0")
 
 [node name="RightHand" type="XRController3D" parent="VR_body/XROrigin3D" unique_id=1746453082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -120,7 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
 [node name="Screen" type="MeshInstance3D" parent="VR_body/XROrigin3D/LeftHand" unique_id=497937548]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.20918834, 0.018070698)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.20918822, 0.104999065)
 layers = 2
 mesh = SubResource("QuadMesh_dwbse")
 
@@ -132,12 +146,40 @@ collision_mask = 3
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Terrain" unique_id=1380731063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.692269, 0.19823909, 0)
+light_color = Color(1, 0.101960786, 0.3372549, 1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain" unique_id=318804259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.218518, 2.396089, 11.042987)
+light_color = Color(0.16078432, 1, 1, 1)
+omni_range = 63.105
+
+[node name="Floor1" type="MeshInstance3D" parent="." unique_id=186201011]
+transform = Transform3D(1.8216429, 0, 0, 0, 1.3909636, 0, 0, 0, 1.7796136, -11.905393, 0.13519382, 0)
+mesh = SubResource("PlaneMesh_pkg7o")
+
+[node name="Child1" parent="." unique_id=869885983 instance=ExtResource("6_dwbse")]
+transform = Transform3D(-0.5000001, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5000001, 4.006792, 4.4782, 5.044053)
+
+[node name="Child2" parent="." unique_id=1434355069 instance=ExtResource("6_dwbse")]
+transform = Transform3D(-0.31142122, 0, -0.39117378, 0, 0.5, 0, 0.39117378, 0, -0.31142122, -20.934292, 0.3724807, -0.79487354)
+
+[node name="Child3" parent="." unique_id=1210855795 instance=ExtResource("6_dwbse")]
+transform = Transform3D(0.34386706, 0, -0.3629814, 0, 0.5, 0, 0.3629814, 0, 0.34386706, -3.964989, 0.42668867, 4.0254183)
+
+[node name="Child4" parent="." unique_id=637967175 instance=ExtResource("6_dwbse")]
+transform = Transform3D(-0.20371711, 0, 0.22022568, 0, 0.3, 0, -0.22022568, 0, -0.20371711, 1.3845534, 3.0396464, -6.798685)
+
+[node name="Label3D2" type="Label3D" parent="Child4" unique_id=1046619247]
+transform = Transform3D(-0.99828506, 0, 0.05853969, 0, 1.0000002, 0, -0.05853969, 0, -0.99828506, -0.07693386, 2.0948982, 0.03553772)
+text = "Find the Children
+I
+V
+"
 
 [connection signal="button_pressed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_pressed"]
 [connection signal="button_released" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_button_released"]
 [connection signal="input_float_changed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_input_float_changed"]
 [connection signal="input_vector2_changed" from="VR_body/XROrigin3D/RightHand" to="quadraped" method="_on_right_hand_input_vector_2_changed"]
+[connection signal="button_pressed" from="VR_body/XROrigin3D/LeftHand" to="quadraped" method="_on_left_hand_button_pressed"]
+[connection signal="button_pressed" from="VR_body/XROrigin3D/LeftHand" to="VR_body" method="_on_left_hand_button_pressed"]
 [connection signal="input_vector2_changed" from="VR_body/XROrigin3D/LeftHand" to="quadraped" method="_on_left_hand_input_vector_2_changed"]

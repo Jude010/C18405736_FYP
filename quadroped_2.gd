@@ -78,13 +78,17 @@ func _physics_process(delta: float) -> void:
 	
 	body.rotate_y(speed_r * rot * delta)
 	body.rotate_object_local(Vector3.RIGHT , rot_x * delta* speed_r)
+	if  body.rotation.x > .5:
+		body.rotation.x = .5
+	elif body.rotation.x < -.5:
+		body.rotation.x = -.5
 	
-	if body.global_position.y - global_position.y > 0.099 :
-		dir = dir * Vector3.UP
+	#if body.global_position.y - global_position.y > 0.099 :
+	#	dir = dir * Vector3.UP
 	
-	if (body.global_position.y - global_position.y) + (dir.y * delta) > 0.5 :
+	if (body.global_position.y - $RayCast3D.get_collision_point().y) + (dir.y * delta) > 1.5 :
 		dir.y = 0
-	
+		
 	body.velocity = body.global_transform.basis * dir * speed * delta
 	
 	walk(delta , body)
@@ -95,10 +99,11 @@ func _physics_process(delta: float) -> void:
 	#print(global_position)
 	
 
-## movement X/Z
+## rotation
 func _on_right_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
-	if name == "primary":
-		dir = Vector3(value[0],dir[1],-value[1])
+	rot = -value[0]
+	rot_x = value[1]
+	
 	 
 ## movement Y
 func _on_right_hand_input_float_changed(name: String, value: float) -> void:
@@ -108,11 +113,11 @@ func _on_right_hand_input_float_changed(name: String, value: float) -> void:
 		dir.y = -value		
 		
 
-func _on_right_hand_button_released(name: String) -> void:
+func _on_right_hand_button_released(_name: String) -> void:
 	dir.y =0
 
 
-func _on_right_hand_button_pressed(name: String) -> void:
+func _on_right_hand_button_pressed(_name: String) -> void:
 	if name == "trigger_click":
 		dir.y = 1
 	if name == "grip_click":
@@ -122,7 +127,7 @@ func _on_right_hand_button_pressed(name: String) -> void:
 		$Body.global_position.y = global_position.y
 	
 		
-## movement rotation
+## movement X/Z
 func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
-	rot = -value[0]
-	rot_x = value[1]
+	if name == "primary":
+		dir = Vector3(value[0],dir[1],-value[1])

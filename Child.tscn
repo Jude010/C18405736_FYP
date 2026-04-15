@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c1p5mmkkfu7uu"]
+
+[ext_resource type="Script" uid="uid://cejil74b41qwk" path="res://child.gd" id="1_wpwy3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wpwy3"]
+radius = 1.2001953
+height = 3.5720215
+
+[node name="Node3D" type="Node3D" unique_id=869885983]
+script = ExtResource("1_wpwy3")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2117212135]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=385843617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45767033, 0)
+radius = 0.7174227
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=651025852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1978676, 0)
+radius = 0.49785855
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D" unique_id=890556987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35256052, 0)
+inner_radius = 0.01777335
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1054930868]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.2315006, -0.49556988)
+text = ":0"
+font_size = 50
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1537703728]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1383862386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1505713, -1.2079401)
+shape = SubResource("CapsuleShape3D_wpwy3")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
