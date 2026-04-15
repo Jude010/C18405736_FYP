@@ -25,10 +25,14 @@ func walk(delta:float , body:CharacterBody3D) -> void:
 	var blspring = $SpringArmBL
 	var brspring = $SpringArmBR
 	
-	$Body/quadraped/Armature/Skeleton3D/LegFL/target.global_position = $SpringArmFL/Spring.global_position
-	$Body/quadraped/Armature/Skeleton3D/LegFR/target.global_position = $SpringArmFR/Spring.global_position
-	$Body/quadraped/Armature/Skeleton3D/LegBL/target.global_position = $SpringArmBL/Spring.global_position
-	$Body/quadraped/Armature/Skeleton3D/LegBR/target.global_position = $SpringArmBR/Spring.global_position
+	if !fltarget.is_stepping and $SpringArmFL/Spring.global_position != fltarget.global_position and !frtarget.is_stepping and !bltarget.is_stepping:
+		fltarget.step($SpringArmFL/Spring)
+	if !frtarget.is_stepping and $SpringArmFR/Spring.global_position != frtarget.global_position and !fltarget.is_stepping and !brtarget.is_stepping:
+		frtarget.step($SpringArmFR/Spring)
+	if !bltarget.is_stepping and $SpringArmBL/Spring.global_position != bltarget.global_position and !brtarget.is_stepping and !fltarget.is_stepping:
+		bltarget.step($SpringArmBL/Spring)
+	if !brtarget.is_stepping and $SpringArmBR/Spring.global_position != brtarget.global_position and !frtarget.is_stepping and !bltarget.is_stepping:
+		brtarget.step($SpringArmBR/Spring)
 	
 	
 	step(delta , body ,fltarget , flshoulder , flspring)
@@ -43,6 +47,7 @@ func step(delta:float , body:CharacterBody3D , target:Marker3D ,shoulder:Marker3
 		move_dir.y = 0
 		move_dir = move_dir.normalized()
 		spring.global_position = shoulder.global_position+(move_dir*step_dist*delta)
+		
 		
 
 

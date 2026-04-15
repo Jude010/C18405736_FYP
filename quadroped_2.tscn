@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://3mjnl6yovd6o"]
 
 [ext_resource type="Script" uid="uid://bpo8osk6cddir" path="res://quadroped_2.gd" id="1_n3y5h"]
+[ext_resource type="Script" uid="uid://h8phto8pekci" path="res://target.gd" id="2_jepki"]
 [ext_resource type="Script" uid="uid://bh4equghopcqe" path="res://ray_cast_3d.gd" id="2_u4k2u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxwn8"]
@@ -524,6 +525,7 @@ settings/1/joints/2/limitation = null
 [node name="target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFL" unique_id=512614231]
 transform = Transform3D(0.00096404005, -0.0023520954, -0.9999968, -0.9996766, 0.025407651, -0.0010234879, 0.025409978, 0.9996745, -0.0023268587, -0.47258195, -2.5566952, -0.62130404)
 top_level = true
+script = ExtResource("2_jepki")
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFL" unique_id=1337440696]
 transform = Transform3D(1.0000013, -9.313226e-09, 0, 0, 1.0000013, 0, -1.9326762e-12, -5.0931703e-11, 1, 0.012383805, 0.2156592, 0.57208765)
@@ -563,6 +565,7 @@ settings/1/joints/2/limitation = null
 [node name="target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFR" unique_id=2144226765]
 transform = Transform3D(0.00096404005, -0.0023520954, -0.9999968, -0.9996766, 0.025407651, -0.0010234879, 0.025409978, 0.9996745, -0.0023268587, 0.5513009, -2.5903113, -0.4432704)
 top_level = true
+script = ExtResource("2_jepki")
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegFR" unique_id=1702523018]
 transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, -5.684342e-13, -1.0913936e-11, 1, 0.0038650304, 0.22524701, -0.5804561)
@@ -602,6 +605,7 @@ settings/1/joints/2/limitation = null
 [node name="target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBL" unique_id=776130848]
 transform = Transform3D(-8.344649e-07, -5.6594614e-05, -1, -0.9998529, 0.017156245, -1.1920929e-07, 0.017156245, 0.99985296, -5.6624413e-05, -0.6191906, -2.6043642, 0.5778118)
 top_level = true
+script = ExtResource("2_jepki")
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBL" unique_id=937819781]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, -4.5474735e-13, -7.275958e-12, 1, 0.03413124, 1.9891467, 0.59726614)
@@ -641,6 +645,7 @@ settings/1/joints/2/limitation = null
 [node name="target" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBR" unique_id=1698648819]
 transform = Transform3D(-8.344649e-07, -5.6594614e-05, -1, -0.9998529, 0.017156245, -1.1920929e-07, 0.017156245, 0.99985296, -5.6624413e-05, 0.5471126, -2.6043642, 0.63035434)
 top_level = true
+script = ExtResource("2_jepki")
 
 [node name="knee" type="Marker3D" parent="Body/quadraped/Armature/Skeleton3D/LegBR" unique_id=2011288867]
 transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, -5.684342e-13, -1.0913936e-11, 1, 0.0341302, 1.9890777, -0.6239527)
